@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidAppDev1">
         <activity
+            android:name=".editBudget"
+            android:parentActivityName=".homeScreen">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".homeScreen" />
+        </activity>
+        <activity
             android:name=".signUpScreen"
             android:parentActivityName=".MainActivity">
 
