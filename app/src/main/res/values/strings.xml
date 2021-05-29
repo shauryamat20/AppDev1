@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidAppDev1</string>
+    <string name="login_message">Username</string>
+    <string name="password_message">Enter Password</string>
+
+
+</resources>
