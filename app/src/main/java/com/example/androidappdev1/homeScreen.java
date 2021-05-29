@@ -17,4 +17,11 @@ public class homeScreen extends AppCompatActivity {
         Intent intent = new Intent(this, editBudget.class);
         startActivity(intent);
     }
+    public void addTransaction(View view) {
+        Intent intent = new Intent(this, newTransaction.class);
+        startActivity(intent);
+    }public void showTransactions(View view) {
+        Intent intent = new Intent(this, viewTransactions.class);
+        startActivity(intent);
+    }
 }

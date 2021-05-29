@@ -100,4 +100,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createPassword" />
 
+    <Button
+        android:id="@+id/signUpCompleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:onClick="returnToSignIn"
+        android:text="Sign up and return to Sign In"
+        android:textColor="#000000"
+        app:backgroundTint="#9E57B1DA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reenterPassword" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
