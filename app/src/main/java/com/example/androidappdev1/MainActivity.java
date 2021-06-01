@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
     public void signIn(View view) {
         Intent intent = new Intent(this, homeScreen.class);
         User trial = new User("Shaurya", "Mathur", "shauryamat", "password");
-
-        intent.putExtra("spent value", trial.getSpent());
-        intent.putExtra("budget value",trial.getBudget());
-        intent.putExtra("remaining value", trial.getRemaining());
+        trial.setBudget(30.0);
+//        intent.putExtra("spent value", trial.getSpent());
+  //      intent.putExtra("budget value",trial.getBudget());
+    //    intent.putExtra("remaining value", trial.getRemaining());
+        Log.d("TEST", Double.toString(trial.getBudget()));
+        intent.putExtra("my user", trial);
         startActivity(intent);
     }
     public void signUp(View view) {
