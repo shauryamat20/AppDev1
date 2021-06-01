@@ -16,6 +16,7 @@ public class homeScreen extends AppCompatActivity {
         Intent intent = getIntent();
         double monthlyBud = intent.getDoubleExtra("budget value", 0);
         double spent = intent.getDoubleExtra("spent value", 0);
+        double remainder = intent.getDoubleExtra("remaining value", 0);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.monthlyBudget);
@@ -23,6 +24,9 @@ public class homeScreen extends AppCompatActivity {
 
         TextView textview2 = findViewById(R.id.monthlySpent);
         textview2.setText("$"+ Double.toString(spent));
+
+        TextView textview3 = findViewById(R.id.monthyRemain);
+        textview3.setText("$"+ Double.toString(remainder));
 
     }
     public void changeBudget(View view) {
