@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void signIn(View view) {
         Intent intent = new Intent(this, homeScreen.class);
+        User trial = new User("Shaurya", "Mathur", "shauryamat", "password");
+        trial.setBudget(70);
+        double spent = 30;
+        intent.putExtra("spent value", spent);
+        intent.putExtra("budget value",trial.getBudget());
         startActivity(intent);
     }
     public void signUp(View view) {
