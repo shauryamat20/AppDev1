@@ -39,13 +39,11 @@ public class User implements Parcelable {
     public double getBudget(){
         return budget;
     }
-    public String getFirstName(){
-        return this.firstName;
-    }
     public void setBudget(double budget){
         this.budget = budget;
         this.remaining = this.budget - this.spent;
     }
+
     public double getSpent(){
         return spent;
     }
@@ -56,8 +54,14 @@ public class User implements Parcelable {
     public double getRemaining(){
         return remaining;
     }
+
     public void addTransaction(Transaction t){
         transactions.add(t);
+        this.addSpent(t.getAmount());
+    }
+
+    public ArrayList<Transaction> getTransactions(){
+        return this.transactions;
     }
     public User(Parcel in){
         this.firstName = in.readString();

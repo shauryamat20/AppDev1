@@ -42,8 +42,12 @@ public class homeScreen extends AppCompatActivity {
         startActivity(changingBudget);
     }
     public void addTransaction(View view) {
-        Intent intent = new Intent(this, newTransaction.class);
-        startActivity(intent);
+        Intent intentFirst = getIntent();
+        User myUser = intentFirst.getParcelableExtra("my user");
+
+        Intent addingTransaction = new Intent(this, newTransaction.class);
+        addingTransaction.putExtra("my user", myUser);
+        startActivity(addingTransaction);
     }public void showTransactions(View view) {
         Intent intent = new Intent(this, viewTransactions.class);
         startActivity(intent);
