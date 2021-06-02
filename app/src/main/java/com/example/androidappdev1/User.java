@@ -2,6 +2,9 @@ package com.example.androidappdev1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 public class User implements Parcelable {
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
@@ -20,6 +23,7 @@ public class User implements Parcelable {
     private double budget;
     private double spent;
     private double remaining;
+    private ArrayList<Transaction> transactions;
 
     public User(String first, String last, String name, String pass){
         firstName = first;
@@ -29,6 +33,7 @@ public class User implements Parcelable {
         budget = 0;
         spent = 0;
         remaining = budget-spent;
+        transactions = new ArrayList<Transaction>();
     }
 
     public double getBudget(){
@@ -39,7 +44,6 @@ public class User implements Parcelable {
     }
     public void setBudget(double budget){
         this.budget = budget;
-        this.spent = this.spent;
         this.remaining = this.budget - this.spent;
     }
     public double getSpent(){
@@ -52,6 +56,9 @@ public class User implements Parcelable {
     public double getRemaining(){
         return remaining;
     }
+    public void addTransaction(Transaction t){
+        transactions.add(t);
+    }
     public User(Parcel in){
         this.firstName = in.readString();
         this.lastName = in.readString();
@@ -60,6 +67,7 @@ public class User implements Parcelable {
         this.budget = in.readDouble();
         this.spent = in.readDouble();
         this.remaining = in.readDouble();
+        this.transactions = in.readArrayList(Transaction.class.getClassLoader());
     }
 
     @Override
@@ -76,6 +84,7 @@ public class User implements Parcelable {
         dest.writeDouble(this.budget);
         dest.writeDouble(this.spent);
         dest.writeDouble(this.remaining);
+        dest.writeList(this.transactions);
     }
 
 }

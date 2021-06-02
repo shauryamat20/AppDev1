@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 //        intent.putExtra("spent value", trial.getSpent());
   //      intent.putExtra("budget value",trial.getBudget());
     //    intent.putExtra("remaining value", trial.getRemaining());
-        Log.d("TEST", Double.toString(trial.getBudget()));
+        Log.d("Sent Budget", Double.toString(trial.getBudget()));
         intent.putExtra("my user", trial);
         startActivity(intent);
     }

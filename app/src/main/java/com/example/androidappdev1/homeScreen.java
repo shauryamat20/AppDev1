@@ -16,12 +16,7 @@ public class homeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         Intent intent = getIntent();
         User myUser = intent.getParcelableExtra("my user");
-        myUser.addSpent(10);
-        Log.d("TEST2", Double.toString(myUser.getBudget()));
-        //Log.d("TEST3", myUser.getFirstName());
-        //double monthlyBud = intent.getDoubleExtra("budget value", 0);
-        //double spent = intent.getDoubleExtra("spent value", 0);
-        //double remainder = intent.getDoubleExtra("remaining value", 0);
+        Log.d("Recieved Budget", Double.toString(myUser.getBudget()));
         double monthlyBud = myUser.getBudget();
         double spent = myUser.getSpent();
         double remainder = myUser.getRemaining();
@@ -39,8 +34,12 @@ public class homeScreen extends AppCompatActivity {
 
     }
     public void changeBudget(View view) {
-        Intent intent = new Intent(this, editBudget.class);
-        startActivity(intent);
+        Intent intentFirst = getIntent();
+        User myUser = intentFirst.getParcelableExtra("my user");
+        //Log.d("Test3", Double.toString(myUser.getBudget()));
+        Intent changingBudget = new Intent(this, editBudget.class);
+        changingBudget.putExtra("my user", myUser);
+        startActivity(changingBudget);
     }
     public void addTransaction(View view) {
         Intent intent = new Intent(this, newTransaction.class);
