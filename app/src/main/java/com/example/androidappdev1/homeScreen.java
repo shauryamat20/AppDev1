@@ -16,7 +16,7 @@ public class homeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         Intent intent = getIntent();
         User myUser = intent.getParcelableExtra("my user");
-        Log.d("Recieved Budget", Double.toString(myUser.getBudget()));
+        //Log.d("Recieved Budget", Double.toString(myUser.getBudget()));
         double monthlyBud = myUser.getBudget();
         double spent = myUser.getSpent();
         double remainder = myUser.getRemaining();

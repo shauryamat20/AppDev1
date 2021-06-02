@@ -27,16 +27,16 @@ public class newTransaction extends AppCompatActivity {
         double sellAmount = Double.parseDouble(amount.getText().toString());
 
         Transaction toAdd = new Transaction(sellerName, sellNote, sellAmount);
-        Log.d("Test7", Double.toString(toAdd.getAmount()));
+        //Log.d("Test7", Double.toString(toAdd.getAmount()));
 
         myUser.addTransaction(toAdd);
 
-        Log.d("Test8", Double.toString(myUser.getSpent()));
+        //Log.d("Test8", Double.toString(myUser.getSpent()));
 
         Intent returnToHome = new Intent(this, homeScreen.class);
         returnToHome.putExtra("my user", myUser);
-        Log.d("Test9", Double.toString(myUser.getSpent()));
-        Log.d("Test10", myUser.getTransactions().get(0).getName());
+        //Log.d("Test9", Double.toString(myUser.getSpent()));
+        //Log.d("Test10", myUser.getTransactions().get(0).getName());
         startActivity(returnToHome);
 
 
