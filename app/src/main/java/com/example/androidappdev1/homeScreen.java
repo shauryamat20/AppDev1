@@ -49,7 +49,10 @@ public class homeScreen extends AppCompatActivity {
         addingTransaction.putExtra("my user", myUser);
         startActivity(addingTransaction);
     }public void showTransactions(View view) {
-        Intent intent = new Intent(this, viewTransactions.class);
-        startActivity(intent);
+        Intent intentInitial = getIntent();
+        User myUser = intentInitial.getParcelableExtra("my user");
+        Intent displayTransactions = new Intent(this, viewTransactions.class);
+        displayTransactions.putExtra("my user", myUser);
+        startActivity(displayTransactions);
     }
 }

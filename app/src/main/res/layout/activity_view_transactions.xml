@@ -5,4 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9E57B1DA"
-    tools:context=".viewTransactions"/>
+    tools:context=".viewTransactions">
+
+    <ListView
+        android:id="@+id/listViewId"
+        android:layout_width="391dp"
+        android:layout_height="783dp"
+        android:entries="@android:array/imProtocols"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
