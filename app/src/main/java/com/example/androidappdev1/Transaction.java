@@ -33,6 +33,10 @@ public class Transaction implements Parcelable {
         return this.sellerName;
     }
 
+    public String getNote(){
+        return this.note;
+    }
+
     public Transaction(Parcel in){
         this.sellerName = in.readString();
         this.note = in.readString();
