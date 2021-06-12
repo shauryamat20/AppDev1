@@ -27,10 +27,10 @@ public class homeScreen extends AppCompatActivity {
         textView.setText("$" + Double.toString(monthlyBud));
 
         TextView textview2 = findViewById(R.id.monthlySpent);
-        textview2.setText("$"+ Double.toString(spent));
+        textview2.setText("$"+ Double.toString(Math.round((spent*100.00))/100.00));
 
         TextView textview3 = findViewById(R.id.monthyRemain);
-        textview3.setText("$"+ Double.toString(remainder));
+        textview3.setText("$"+ Double.toString(Math.round((remainder*100.00))/100.00));
 
     }
     public void changeBudget(View view) {
