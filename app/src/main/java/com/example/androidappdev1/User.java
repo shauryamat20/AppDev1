@@ -36,6 +36,27 @@ public class User implements Parcelable {
         transactions = new ArrayList<Transaction>();
     }
 
+    public User(String firstName, String lastName, String userName, String password, double budget, double spent, double remaining, ArrayList<Transaction> transactions) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
+        this.budget = budget;
+        this.spent = spent;
+        this.remaining = remaining;
+        this.transactions = transactions;
+    }
+
+    public User(String firstName, String lastName, String userName, String password, double budget, double spent, double remaining) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
+        this.budget = budget;
+        this.spent = spent;
+        this.remaining = remaining;
+    }
+
     public double getBudget(){
         return budget;
     }
